@@ -56,7 +56,7 @@ map.addLayer(vectorLayer);
 
 var typeSelect = document.getElementById('type');
 var draw; // global so we can remove it later
-function addInteraction() {
+function addInteractions() {
   var value = typeSelect.value;
   if (value !== 'None') {
     draw = new ol.interaction.Draw({
@@ -68,9 +68,9 @@ function addInteraction() {
 }
 typeSelect.onchange = function(e) {
   map.removeInteraction(draw);
-  addInteraction();
+  addInteractions();
 };
-addInteraction();
+addInteractions();
 
 var select = new ol.interaction.Select();
 var modify = new ol.interaction.Modify({
